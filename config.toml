@@ -4,6 +4,7 @@
 model = "azure/gpt-5.3-codex"
 model_reasoning_effort = "medium"
 model_provider = "mspbots-gateway"
+approval_policy = "never"
 
 [model_providers.mspbots-gateway]
 name = "MSPBots AI Gateway"
