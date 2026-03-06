@@ -1,0 +1,31 @@
+# ==========================================
+# 1. 基础模型配置 (使用公司 AI Gateway)
+# ==========================================
+model = "azure/gpt-5.3-codex"
+model_reasoning_effort = "medium"
+model_provider = "mspbots-gateway"
+
+[model_providers.mspbots-gateway]
+name = "MSPBots AI Gateway"
+base_url = "https://aigateway-sandbox.mspbots.ai/v1"
+env_key = "OPENAI_API_KEY"       # 指示 Codex 从环境变量读取 API Key，无需写死在文件里
+wire_api = "responses"
+requires_openai_auth = false
+
+# ==========================================
+# 2. 本地系统与项目权限配置 (保留你原本的设置)
+# ==========================================
+[windows]
+sandbox = "elevated"
+
+[projects.'\\?\C:\Users\Administrator\Desktop\mb-platform-core']
+trust_level = "trusted"
+
+[projects.'C:\Users\Administrator\Desktop\MPD']
+trust_level = "trusted"
+
+[projects.'C:\Users\Administrator\.codex']
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.2" = "gpt-5.3-codex"

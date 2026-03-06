@@ -1,0 +1,10 @@
+model = "gpt-5.4"
+model_reasoning_effort = "medium"
+[windows]
+sandbox = "elevated"
+
+[projects.'\\?\C:\Users\Administrator\Desktop\mb-platform-core']
+trust_level = "trusted"
+
+[projects.'C:\Users\Administrator\Desktop\MPD']
+trust_level = "trusted"
