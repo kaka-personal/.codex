@@ -1,0 +1,29 @@
+# ==========================================
+# 1. 本地 CLIProxyAPI Plus 代理登录
+# ==========================================
+model = "gpt-5-codex"
+model_reasoning_effort = "high"
+model_provider = "cliproxyapi"
+preferred_auth_method = "apikey"
+
+[model_providers.cliproxyapi]
+name = "cliproxyapi"
+base_url = "http://127.0.0.1:8317/v1"
+wire_api = "responses"
+requires_openai_auth = false
+env_key = "CODEX_LOCAL_PROXY_KEY"  #这个CODEX_LOCAL_PROXY_KEY是配置在环境变量的,值是CPA管理后台的API 密钥列表 (api-keys)
+
+# ==========================================
+# 2. 本地系统与项目权限配置 (保留你原本的设置)
+# ==========================================
+[windows]
+sandbox = "elevated"
+
+[projects.'\\?\C:\Users\Administrator\Desktop\mb-platform-core']
+trust_level = "trusted"
+
+[projects.'C:\Users\Administrator\Desktop\MPD']
+trust_level = "trusted"
+
+[projects.'C:\Users\Administrator\.codex']
+trust_level = "trusted"
